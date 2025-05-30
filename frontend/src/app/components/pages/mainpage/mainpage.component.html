@@ -1,0 +1,118 @@
+<!-- Sidebar Component with event binding -->
+<div class="main-layout">
+  <app-sidebar 
+    (newChat)="startNewChat()"
+    (sidebarToggled)="onSidebarToggled($event)">
+  </app-sidebar>
+
+  <div class="chat-container" [ngClass]="{ 'sidebar-open': sidebarOpen, 'sidebar-closed': !sidebarOpen }">
+
+    <!-- Chat Messages Area -->
+    <div class="chat-messages" #scrollContainer *ngIf="submitted">
+      <div *ngFor="let msg of messages; let i = index" class="chat-message" [ngClass]="msg.sender">
+        <div class="bubble">
+          
+          <!-- Main text (explanation/response) -->
+          <p *ngIf="msg.text">{{ msg.text }}</p>
+
+          <!-- Conditional rendering based on content type -->
+          <ng-container [ngSwitch]="msg.contentType">
+
+            <!-- Chart -->
+            <div *ngSwitchCase="'chart'" class="chart-container">
+              <canvas [id]="'chart-' + i"></canvas>
+            </div>
+
+            <!-- Table -->
+            <div *ngSwitchCase="'table'" class="table-container">
+              <table class="styled-table">
+                <thead>
+                  <tr>
+                    <th *ngFor="let header of msg.tableHeaders">{{ header }}</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let row of msg.tableData">
+                    <td *ngFor="let cell of row">{{ cell }}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Chart + Table -->
+            <div *ngSwitchCase="'both'" class="combined-section">
+              <div class="chart-container">
+                <canvas [id]="'chart-' + i"></canvas>
+              </div>
+              <div class="table-container">
+                <table class="styled-table">
+                  <thead>
+                    <tr>
+                      <th *ngFor="let header of msg.tableHeaders">{{ header }}</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let row of msg.tableData">
+                      <td *ngFor="let cell of row">{{ cell }}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- ✅ Image -->
+      <!-- Debug: show image URL below each image message -->
+<div *ngSwitchCase="'image'" class="image-container">
+  <img [src]="msg.imageUrl" alt="Response Image" class="chat-image" />
+</div>
+
+
+          </ng-container>
+
+        </div>
+      </div>
+
+      <!-- Typing indicator -->
+      <div class="chat-message bot" *ngIf="isTyping">
+        <div class="bubble">
+          <div class="typing-indicator">
+            <span></span><span></span><span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Chat Input Area -->
+    <div class="chat-input-area">
+      <textarea 
+        #messageInput
+        [(ngModel)]="question"
+        placeholder="Ask something..."
+        rows="2"
+        class="chat-input"
+        (keydown)="onEnterPress($event)">
+      </textarea>
+
+      <!-- Send Button -->
+      <button 
+        *ngIf="!isProcessing"
+        mat-icon-button
+        color="primary"
+        (click)="onSubmit()"
+        [disabled]="!question.trim()">
+        <mat-icon>send</mat-icon>
+      </button>
+
+      <!-- Cancel Button -->
+      <button 
+        *ngIf="isProcessing"
+        mat-icon-button
+        color="warn"
+        (click)="cancelSubmission()"
+        matTooltip="Cancel message">
+        <mat-icon>cancel</mat-icon>
+      </button>
+    </div>
+    
+  </div>
+</div>

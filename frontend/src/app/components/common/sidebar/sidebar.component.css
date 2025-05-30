@@ -1,0 +1,149 @@
+/* Modern Sidebar Styling */
+.sidebar {
+  position: fixed;
+  top: 64px; /* Adjusted to account for navbar height */
+  left: -280px;
+  width: 270px;
+  height: calc(100% - 64px); /* Adjusted height to avoid navbar overlap */
+  background-color: #1e2a38;
+  color: #f8f9fa;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  padding-top: 10px;
+  z-index: 1100;
+  overflow-y: auto;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar.open {
+  left: 0;
+  box-shadow: 4px 0 25px rgba(0, 0, 0, 0.3);
+}
+
+.sidebar h3 {
+  margin: 0;
+  padding: 20px 24px;
+  font-size: 22px;
+  font-weight: 500;
+  color: #f8f9fa;
+  letter-spacing: 0.5px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 8px 0;
+  margin: 0;
+}
+
+.sidebar ul li {
+  padding: 14px 24px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-left: 3px solid transparent;
+  margin-bottom: 2px;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sidebar ul li:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+  border-left: 3px solid #3498db;
+}
+
+.new-chat-btn {
+  margin: 15px 20px;
+  padding: 10px 16px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  width: calc(100% - 40px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.new-chat-btn:hover {
+  background-color: #2980b9;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.toggle-btn {
+  position: fixed;
+  top: 12px;
+  left: 15px;
+  background: none;
+  color: white;
+  border: none;
+  cursor: pointer;
+  z-index: 1200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.toggle-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: scale(1.05);
+}
+
+/* Custom scrollbar for the sidebar */
+.sidebar::-webkit-scrollbar {
+  width: 5px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Animation for sidebar items */
+.sidebar ul li {
+  opacity: 0;
+  transform: translateX(-10px);
+  animation: fadeInRight 0.3s forwards;
+  animation-delay: calc(0.05s * var(--item-index, 0));
+}
+
+@keyframes fadeInRight {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 250px;
+    left: -250px;
+  }
+  
+  .sidebar h3 {
+    padding: 15px 20px;
+  }
+  
+  .sidebar ul li {
+    padding: 12px 20px;
+  }
+}

@@ -1,0 +1,22 @@
+<!-- <div class="sidebar" [class.open]="isOpen">
+   
+    <h3>Chats</h3>
+    <ul>
+      <li *ngFor="let q of history">{{ q }}</li>
+    </ul>
+  </div>
+  <button class="toggle-btn" (click)="toggleSidebar()">
+    <mat-icon>menu</mat-icon>
+  </button>
+   -->
+<div class="sidebar" [class.open]="isOpen">
+  <button class="new-chat-btn" (click)="onNewChatClick()">+ New Chat</button>
+  <ul>
+    <li *ngFor="let q of history">{{ q }}</li>
+  </ul>
+</div>
+
+
+<button class="toggle-btn" (click)="toggleSidebar()">
+  <mat-icon>menu</mat-icon>
+</button>

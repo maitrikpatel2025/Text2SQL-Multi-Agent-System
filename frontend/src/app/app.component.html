@@ -1,0 +1,9 @@
+<!-- Sidebar Toggle Button should be inside SidebarComponent -->
+<app-navbar (toggleSidebar)="sidebar.toggleSidebar()"></app-navbar>  <!-- Pass event -->
+<app-sidebar #sidebar></app-sidebar>
+
+
+ <!-- Main Content -->
+<div class="main-content">
+    <router-outlet></router-outlet>
+  </div>

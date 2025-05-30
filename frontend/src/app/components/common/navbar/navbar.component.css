@@ -1,0 +1,127 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px; /* Consistent height with sidebar offset */
+  padding: 0 20px;
+  background: linear-gradient(to right, #1e2a38, #2c3e50);
+  color: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+.nav-title {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  justify-content: center;
+}
+
+.nav-title h1 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  color: #f8f9fa;
+}
+
+.nav-icons {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.user-profile {
+  display: flex;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 8px 16px;
+  border-radius: 24px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.user-profile:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  transform: translateY(-1px);
+}
+
+.user-profile mat-icon {
+  color: #3498db;
+  margin-right: 10px;
+}
+
+.username {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.mat-icon-button {
+  background-color: rgba(255, 255, 255, 0.08);
+  border-radius: 50%;
+  transition: all 0.2s ease;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mat-icon-button:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.mat-icon-button mat-icon {
+  color: #3498db;
+  font-size: 20px;
+  height: 20px;
+  width: 20px;
+}
+
+.logout-icon {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* For responsive design */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0 16px;
+  }
+  
+  .nav-title h1 {
+    font-size: 18px;
+  }
+  
+  .username {
+    display: none; /* Hide username on smaller screens */
+  }
+  
+  .user-profile {
+    padding: 8px;
+  }
+  
+  .user-profile mat-icon {
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-title h1 {
+    font-size: 16px;
+  }
+  
+  .mat-icon-button {
+    width: 36px;
+    height: 36px;
+  }
+}
