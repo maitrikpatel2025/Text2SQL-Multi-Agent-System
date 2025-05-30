@@ -175,7 +175,7 @@ class GraphPlottingAgent:
             - "box": Statistical summary of a numeric variable (y_column), possibly grouped by a category (x_column).
             - "area": Cumulative trends, similar to line but filled.
             - "none": If data is not suitable for visualization or columns are missing.
-
+ 
             AGGREGATION:
             If `aggregation_needed` is true, specify `group_by` (the categorical column for grouping) and `y_column` (the numeric column to aggregate) and `aggregation_method`.
             The `x_column` will then typically be the `group_by` column after aggregation.
