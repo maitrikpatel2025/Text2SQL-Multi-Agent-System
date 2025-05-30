@@ -1,0 +1,400 @@
+{
+    "machines_metadata" :
+    [
+    {
+        "column_name": "time",
+        "description": "time instance at which channel values are recorded",
+        "column_datatype": "timestamp without time zone"
+    },
+    {
+        "column_name": "NCH1",
+        "description": "Axis current-1",
+        "column_datatype": "numeric"
+    },
+    {
+        "column_name": "NCH10",
+        "description": "Actual Axis speed -2",
+        "column_datatype": "numeric"
+    },
+    {
+        "column_name": "NCH11",
+        "description": "Actual Axis speed -3",
+        "column_datatype": "numeric"
+    },
+    {
+        "column_name": "NCH12",
+        "description": "Actual Axis speed -4",
+        "column_datatype": "numeric"
+    },
+    {
+        "column_name": "NCH13",
+        "description": "Axis motor Temp.-1",
+        "column_datatype": "numeric"
+    },
+    {
+        "column_name": "NCH14",
+        "description": "Axis motor Temp.-2",
+        "column_datatype": "numeric"
+    },
+    {
+        "column_name": "NCH15",
+        "description": "Axis motor Temp.-3",
+        "column_datatype": "numeric"
+    },
+    {
+        "column_name": "NCH16",
+        "description": "Axis motor Temp.-4",
+        "column_datatype": "numeric"
+    },
+    {
+        "column_name": "NCH17",
+        "description": "Commanded axis feedrate",
+        "column_datatype": "numeric"
+    },
+    {
+        "column_name": "NCH18",
+        "description": "Spindle current",
+        "column_datatype": "numeric"
+    },
+    {
+        "column_name": "NCH19",
+        "description": "Spindle load",
+        "column_datatype": "numeric"
+    },
+    {
+        "column_name": "NCH2",
+        "description": "Axis current-2",
+        "column_datatype": "numeric"
+    },
+    {
+        "column_name": "NCH20",
+        "description": "Spindle actual RPM - Speed",
+        "column_datatype": "numeric"
+    },
+    {
+        "column_name": "NCH21",
+        "description": "Spindle Motor Temp",
+        "column_datatype": "numeric"
+    },
+    {
+        "column_name": "NCH22",
+        "description": "DC bus voltage",
+        "column_datatype": "numeric"
+    },
+    {
+        "column_name": "NCH23",
+        "description": "Power Module KWh",
+        "column_datatype": "numeric"
+    },
+    {
+        "column_name": "NCH24",
+        "description": "Machine status",
+        "column_datatype": "numeric"
+    },
+    {
+        "column_name": "NCH25",
+        "description": "Alarm Name - Not the count",
+        "column_datatype": "string"
+    },
+    {
+        "column_name": "NCH26",
+        "description": "Axis current-5",
+        "column_datatype": "numeric"
+    },
+    {
+        "column_name": "NCH27",
+        "description": "Axis current-6",
+        "column_datatype": "numeric"
+    },
+    {
+        "column_name": "NCH28",
+        "description": "Axis load-5",
+        "column_datatype": "numeric"
+    },
+    {
+        "column_name": "NCH29",
+        "description": "Axis load-6",
+        "column_datatype": "numeric"
+    },
+    {
+        "column_name": "NCH3",
+        "description": "Axis current-3",
+        "column_datatype": "numeric"
+    },
+    {
+        "column_name": "NCH30",
+        "description": "Actual Axis speed -5",
+        "column_datatype": "numeric"
+    },
+    {
+        "column_name": "NCH4",
+        "description": "Axis current-4",
+        "column_datatype": "numeric"
+    },
+    {
+        "column_name": "NCH5",
+        "description": "Axis load-1",
+        "column_datatype": "numeric"
+    },
+    {
+        "column_name": "NCH6",
+        "description": "Axis load-2",
+        "column_datatype": "numeric"
+    },
+    {
+        "column_name": "NCH7",
+        "description": "Axis load-3",
+        "column_datatype": "numeric"
+    },
+    {
+        "column_name": "NCH8",
+        "description": "Axis load-4",
+        "column_datatype": "numeric"
+    },
+    {
+        "column_name": "NCH9",
+        "description": "Actual Axis speed -1",
+        "column_datatype": "numeric"
+    },
+    {
+        "column_name": "IotdeviceId",
+        "description": "Unique ID of an iot device",
+        "column_datatype": "string"
+    },
+    {
+        "column_name": "MachineName",
+        "description": "Name of the machine",
+        "column_datatype": "string"
+    },
+    {
+        "column_name": "MachineId",
+        "description": "Unique ID of a machine",
+        "column_datatype": "string"
+    },
+    {
+        "column_name": "DivisionName",
+        "description": "Name of the division",
+        "column_datatype": "string"
+    },
+    {
+        "column_name": "PlantName",
+        "description": "Name of the main plant",
+        "column_datatype": "string"
+    },
+    {
+        "column_name": "SubPlantName",
+        "description": "Name of the sub plant",
+        "column_datatype": "string"
+    },
+    {
+        "column_name": "ProcessName",
+        "description": "Name of the process to which particular machine belongs",
+        "column_datatype": "string"
+    }
+],
+"db_schema_metadata" :
+[
+    {
+        "column_name": "time",
+        "description": "time instance at which channel values are recorded",
+        "column_datatype": "timestamp without time zone"
+    },
+    {
+        "column_name": "NCH1",
+        "description": "Axis current-1",
+        "column_datatype": "numeric"
+    },
+    {
+        "column_name": "NCH10",
+        "description": "Actual Axis speed -2",
+        "column_datatype": "numeric"
+    },
+    {
+        "column_name": "NCH11",
+        "description": "Actual Axis speed -3",
+        "column_datatype": "numeric"
+    },
+    {
+        "column_name": "NCH12",
+        "description": "Actual Axis speed -4",
+        "column_datatype": "numeric"
+    },
+    {
+        "column_name": "NCH13",
+        "description": "Axis motor Temp.-1",
+        "column_datatype": "numeric"
+    },
+    {
+        "column_name": "NCH14",
+        "description": "Axis motor Temp.-2",
+        "column_datatype": "numeric"
+    },
+    {
+        "column_name": "NCH15",
+        "description": "Axis motor Temp.-3",
+        "column_datatype": "numeric"
+    },
+    {
+        "column_name": "NCH16",
+        "description": "Axis motor Temp.-4",
+        "column_datatype": "numeric"
+    },
+    {
+        "column_name": "NCH17",
+        "description": "Commanded axis feedrate",
+        "column_datatype": "numeric"
+    },
+    {
+        "column_name": "NCH18",
+        "description": "Spindle current",
+        "column_datatype": "numeric"
+    },
+    {
+        "column_name": "NCH19",
+        "description": "Spindle load",
+        "column_datatype": "numeric"
+    },
+    {
+        "column_name": "NCH2",
+        "description": "Axis current-2",
+        "column_datatype": "numeric"
+    },
+    {
+        "column_name": "NCH20",
+        "description": "Spindle actual RPM",
+        "column_datatype": "numeric"
+    },
+    {
+        "column_name": "NCH21",
+        "description": "Spindle Motor Temp",
+        "column_datatype": "numeric"
+    },
+    {
+        "column_name": "NCH22",
+        "description": "DC bus voltage",
+        "column_datatype": "numeric"
+    },
+    {
+        "column_name": "NCH23",
+        "description": "Power Module KWh",
+        "column_datatype": "numeric"
+    },
+    {
+        "column_name": "NCH24",
+        "description": "Machine status",
+        "column_datatype": "numeric"
+    },
+    {
+        "column_name": "NCH25",
+        "description": "Alarm Name - Not the count",
+        "column_datatype": "numeric"
+    },
+
+    {
+        "column_name": "NCH26",
+        "description": "Axis current-5",
+        "column_datatype": "numeric"
+    },
+    {
+        "column_name": "NCH27",
+        "description": "Axis current-6",
+        "column_datatype": "numeric"
+    },
+    {
+        "column_name": "NCH28",
+        "description": "Axis load-5",
+        "column_datatype": "numeric"
+    },
+    {
+        "column_name": "NCH29",
+        "description": "Axis load-6",
+        "column_datatype": "numeric"
+    },
+    {
+        "column_name": "NCH3",
+        "description": "Axis current-3",
+        "column_datatype": "numeric"
+    },
+    {
+        "column_name": "NCH30",
+        "description": "Actual Axis speed -5",
+        "column_datatype": "numeric"
+    },
+    {
+        "column_name": "NCH4",
+        "description": "Axis current-4",
+        "column_datatype": "numeric"
+    },
+    {
+        "column_name": "NCH5",
+        "description": "Axis load-1",
+        "column_datatype": "numeric"
+    },
+    {
+        "column_name": "NCH6",
+        "description": "Axis load-2",
+        "column_datatype": "numeric"
+    },
+    {
+        "column_name": "NCH7",
+        "description": "Axis load-3",
+        "column_datatype": "numeric"
+    },
+    {
+        "column_name": "NCH8",
+        "description": "Axis load-4",
+        "column_datatype": "numeric"
+    },
+    {
+        "column_name": "NCH9",
+        "description": "Actual Axis speed -1",
+        "column_datatype": "numeric"
+    },
+    {
+        "column_name": "IotdeviceId",
+        "description": "Unique ID of an iot device",
+        "column_datatype": "string"
+    },
+    {
+        "column_name": "MachineName",
+        "description": "Name of the machine",
+        "column_datatype": "string"
+    },
+    {
+        "column_name": "MachineId",
+        "description": "Unique ID of a machine",
+        "column_datatype": "string"
+    },
+    {
+        "column_name": "DivisionName",
+        "description": "Name of the division",
+        "column_datatype": "string"
+    },
+    {
+        "column_name": "PlantName",
+        "description": "Name of the main plant",
+        "column_datatype": "string"
+    },
+    {
+        "column_name": "SubPlantName",
+        "description": "Name of the sub plant",
+        "column_datatype": "string"
+    },
+    {
+        "column_name": "ProcessName",
+        "description": "Name of the process to which particular machine belongs",
+        "column_datatype": "string"
+    }
+],
+"table_metadata": [
+    {
+      "table_name": "EMS_Hourly"
+    },
+    {
+      "table_name": "EMS_Daily"
+    },
+    {
+      "table_name": "EMS_Shiftwise"
+    }
+  ]
+}
