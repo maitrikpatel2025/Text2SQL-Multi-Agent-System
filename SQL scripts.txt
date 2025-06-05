@@ -1,0 +1,83 @@
+-- Table: public.EMS_Daily
+
+-- DROP TABLE IF EXISTS public."EMS_Daily";
+
+CREATE TABLE IF NOT EXISTS public."EMS_Daily"
+(
+    "time" timestamp without time zone,
+    "IotdeviceId" character varying(50) COLLATE pg_catalog."default",
+    "MachineName" character varying(100) COLLATE pg_catalog."default",
+    "MachineId" character varying(50) COLLATE pg_catalog."default",
+    "DivisionName" character varying(100) COLLATE pg_catalog."default",
+    "PlantName" character varying(100) COLLATE pg_catalog."default",
+    "SubPlantName" character varying(100) COLLATE pg_catalog."default",
+    "ProcessName" character varying(100) COLLATE pg_catalog."default",
+    "PlanName" character varying(100) COLLATE pg_catalog."default",
+    "PlanId" integer,
+    "NCH1" double precision,
+    "NCH2" double precision,
+    "NCH3" double precision,
+    "NCH4" double precision,
+    "NCH5" double precision,
+    "NCH6" double precision,
+    "NCH7" double precision,
+    "NCH8" double precision,
+    "NCH9" double precision,
+    "NCH10" double precision,
+    "NCH11" double precision,
+    "NCH12" double precision,
+    "NCH13" double precision,
+    "NCH14" double precision,
+    "NCH15" double precision,
+    "NCH16" double precision,
+    "NCH17" double precision,
+    "NCH18" double precision,
+    "NCH19" double precision,
+    "NCH20" double precision,
+    "NCH21" double precision,
+    "NCH22" double precision,
+    "NCH23" double precision,
+    "NCH24" double precision,
+    "NCH25" double precision,
+    "NCH26" double precision,
+    "NCH27" double precision,
+    "NCH28" double precision,
+    "NCH29" double precision,
+    "NCH30" double precision,
+    "ActivePlan" character varying(100) COLLATE pg_catalog."default",
+    "LastAggregatedAt" timestamp without time zone,
+    CONSTRAINT "EMS_Daily_time_IotdeviceId_PlanName_key" UNIQUE ("time", "IotdeviceId", "PlanName")
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public."EMS_Daily"
+    OWNER to postgres;
+	
+==========================================================================================================
+
+
+
+-- Table: public.Chat_History
+
+-- DROP TABLE IF EXISTS public."Chat_History";
+
+CREATE TABLE IF NOT EXISTS public."Chat_History"
+(
+    "Id" integer NOT NULL DEFAULT nextval('"Chat_History_Id_seq"'::regclass),
+    "Username" text COLLATE pg_catalog."default" NOT NULL,
+    "User_Question" text COLLATE pg_catalog."default" NOT NULL,
+    "Explanation" text COLLATE pg_catalog."default",
+    "Graph" text COLLATE pg_catalog."default",
+    "Table" text COLLATE pg_catalog."default",
+    "Timestamp" timestamp without time zone DEFAULT CURRENT_TIMESTAMP,
+    "GraphImage" text COLLATE pg_catalog."default",
+    CONSTRAINT "Chat_History_pkey" PRIMARY KEY ("Id")
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public."Chat_History"
+    OWNER to postgres;
+	
+	
