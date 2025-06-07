@@ -79,7 +79,7 @@ Make sure the following DB is available:
 ```ini
 host=localhost
 port=5432
-dbname=APAR_KPI
+dbname=your db name
 user=postgres
 password=admin
 ```
