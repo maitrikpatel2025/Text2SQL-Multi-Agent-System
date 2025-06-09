@@ -76,5 +76,6 @@ langchain_openai
 langchain
 langgraph
 plotly
-fastapi 
+fastapi
 uvicorn[standard]
+googletrans==4.0.0rc1
