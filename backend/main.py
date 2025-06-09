@@ -14,6 +14,7 @@ from fastapi.responses import FileResponse # Added
 from pydantic import BaseModel
 import uuid # Added
 import base64 # Added
+from googletrans import Translator
 
 from graph_agent import GraphPlottingAgent
 
@@ -65,6 +66,19 @@ db_config = {
 # Get API key from environment
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 graph_agent = GraphPlottingAgent(openai_api_key=OPENAI_API_KEY)
+
+# Translator for cross-lingual support
+translator = Translator()
+
+def translate_to_english(text: str) -> str:
+    """Translate input text to English if it's in another language."""
+    try:
+        detection = translator.detect(text)
+        if detection.lang != 'en':
+            return translator.translate(text, dest='en').text
+    except Exception as e:
+        print(f"Translation error: {e}")
+    return text
 
 # Constants
 CURRENT_DATE = datetime.today().date()
@@ -1488,12 +1502,15 @@ workflow = build_graph()
 @app.post('/query', response_model=QueryResponse) # Ensure response model matches actual output
 async def handle_query(request: QueryRequest):
     try:
-        user_question = request.user_question
+        user_question_original = request.user_question
+        user_question = translate_to_english(user_question_original)
         username = request.username
 
         print(f"\n🚀 NEW QUERY REQUEST")
         print(f"👤 Username: {username}")
-        print(f"❓ Question: {user_question}")
+        print(f"❓ Question: {user_question_original}")
+        if user_question != user_question_original:
+            print(f"🌐 Translated Question: {user_question}")
         print(f"{'='*80}")
 
         if not user_question:
@@ -1546,7 +1563,7 @@ async def handle_query(request: QueryRequest):
         print("💾 Saving to chat history...")
         insert_chat_history(
             username=username,
-            user_question=user_question,
+            user_question=user_question_original,
             explanation=api_response.Explanation,
             graph=api_response.Graph, # Textual graph info
             table=api_response.Table,
@@ -1671,8 +1688,9 @@ async def enhanced_query_endpoint(request: EnhancedQueryRequest):
     """
     try:
         # Note: The global 'graph_agent' is used here.
+        translated_question = translate_to_english(request.user_question)
         result_from_agent = graph_agent.analyze_and_plot(
-            user_question=request.user_question,
+            user_question=translated_question,
             explanation=request.explanation,
             table_data=request.table_data,
             graph_suggestion=request.graph_suggestion
